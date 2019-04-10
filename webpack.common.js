@@ -2,10 +2,8 @@ const path = require('path');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = {
-	mode: 'production', // development mode generates eval that is not executed by chrome
 	entry: {
 		background: './src/background/index.ts',
 		content: './src/content/index.ts',
@@ -27,7 +25,6 @@ module.exports = {
 					'sass-loader',
 				]
 			}
-
 		],
 	},
 	resolve: {
@@ -45,9 +42,5 @@ module.exports = {
 			{from: '*.html', context: 'src/options/'},
 			{from: '*.html', context: 'src/popup/'},
 		]),
-		new ZipPlugin({
-			path: path.resolve(__dirname, 'dist'),
-			filename: 'release.zip',
-		}),
 	],
 };

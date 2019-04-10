@@ -45,7 +45,7 @@ from "inspect views" section in extension details.
 ## Build for Chrome Web Store
 
 ```bash
-npm run build
+npm run build:prod
 ```
 
 `release.zip` file is generated in the `dist/` directory.
