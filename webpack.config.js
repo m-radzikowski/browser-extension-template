@@ -9,6 +9,8 @@ module.exports = {
 	entry: {
 		background: './src/background/index.ts',
 		content: './src/content/index.ts',
+		options: './src/options/index.ts',
+		popup: './src/popup/index.ts',
 	},
 	module: {
 		rules: [
@@ -40,6 +42,8 @@ module.exports = {
 		new CopyWebpackPlugin([
 			'manifest.json',
 			'icon/*',
+			{from: '*.html', context: 'src/options/'},
+			{from: '*.html', context: 'src/popup/'},
 		]),
 		new ZipPlugin({
 			path: path.resolve(__dirname, 'dist'),

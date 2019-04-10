@@ -4,11 +4,26 @@
 
 See the [changelog](CHANGELOG.md).
 
+## Extension features
+
+Template includes:
+- background script,
+- content scripts injection,
+- options page,
+- browser action with popup,
+- lodash library.
+
+To change [browser action](https://developer.chrome.com/extensions/browserAction)
+to [page action](https://developer.chrome.com/extensions/pageAction),
+replace `browser_action` with `page_action` in `manifest.json`
+and add page action activation [event rules](https://developer.chrome.com/extensions/manifest/event_rules).
+
 ## Development
 
 Extension uses Webpack to bundle and build sources.
 
 Install dependencies:
+
 ```bash
 npm install
 ```
